@@ -20,7 +20,7 @@ namespace Askar0_StopGauges
         static ConfigEntry<bool> isEnabled;
         static ConfigEntry<Key> isKey;
 
-        static bool isAppAFK = false;
+        //static bool isAppAFK = false;
         //static bool isAppAFKh = false;
 
         static ManualLogSource logger;
@@ -53,6 +53,7 @@ namespace Askar0_StopGauges
                 bool wasPressedThisFrame = Keyboard.current[isKey.Value].wasPressedThisFrame;
  
                 bool flag = wasPressedThisFrame;
+                bool isAppAFK;
                 if (flag)
                 {
                     isAppAFK = flag;

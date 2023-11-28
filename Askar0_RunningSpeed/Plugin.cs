@@ -18,11 +18,11 @@ namespace Askar0_RunningSpeed
     {
 
         static ConfigEntry<bool> isEnabled;
-        static ConfigEntry<Key> isKey;
+        //static ConfigEntry<Key> isKey;
         static ConfigEntry<float> isRunningSpeed;
 
-        static ManualLogSource logger;
-        static PlayerMovable playerMovable;
+        //static ManualLogSource logger;
+        //static PlayerMovable playerMovable;
         //static float runningSpeed;
         //static bool runningToggle = false;
 
@@ -37,29 +37,23 @@ namespace Askar0_RunningSpeed
             Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
 
             isEnabled = Config.Bind("General", "Enabled", true, "Is the mod enabled?");
-            isKey = Config.Bind("General", "KeyBind", Key.T, "Running Toggle Keybind (Todo)");
+            //isKey = Config.Bind("General", "KeyBind", Key.T, "Running Toggle Keybind (Todo)");
             isRunningSpeed = Config.Bind("General", "RunSpeed", 9f, "Running Speed Modifier");
 
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), "Askar0_RunningSpeed");
 
-            logger = base.Logger;
-
-
-
+            //logger = base.Logger;
         }
-        
+
         /// <summary>
-        /// Runspeed() Allows you to change the pace the player runs at.
+        /// 
         /// </summary>
-        /// <param name="___RunSpeed"></param>
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(PlayerMovable), "Start")]
-        private static void rspeed(ref float ___RunSpeed)
+        private void Update()
         {
-            ___RunSpeed = isRunningSpeed.Value;
-            logger.LogInfo("RunSpeed State Changed: Speed = " + isRunningSpeed.Value);
-
+            if (isEnabled.Value)
+            {
+                Managers.GetManager<PlayerMovable>().SetMoveSpeed(isRunningSpeed.Value);
+            }
         }
-        
     }
 }
