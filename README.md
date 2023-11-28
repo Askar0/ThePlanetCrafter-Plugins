@@ -9,7 +9,7 @@ Steam: https://store.steampowered.com/app/1284190/The_Planet_Crafter/
 :arrow_down_small: Download files from the releases: https://github.com/askar0/ThePlanetCrafter-Plugins/releases/latest
 
 ```
-Note: 11/23/2023 - (Mods/Plugins Under Construction) - Some testing files have be uploaded. 
+Note: 11/23/2023 - (Mods/Plugins Under Construction) - Some testing files have been uploaded. 
           These will need testing and possibly additional updates before release versions will be made available.
 ```
 
