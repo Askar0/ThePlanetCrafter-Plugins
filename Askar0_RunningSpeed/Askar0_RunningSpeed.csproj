@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>Askar0_RunningSpeed</AssemblyName>
+    <Description>(Cheat) Running Speed Modifier</Description>
+    <Version>1.0.0.1</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <LangVersion>latest</LangVersion>
+    <Copyright>Copyright © 2023 By Askar0</Copyright>
+  </PropertyGroup>
+
+  <Import Project="$(SolutionDir)\Solution Items\solution_private.targets" />
+
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(GameManaged)\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="UnityEngine-InputSystem">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(GameManaged)\Unity.InputSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="CopyDLLs" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetDir)$(AssemblyName).dll" DestinationFolder="$(PluginsFolder)\Askar0-$(Description)" />
+    <Copy SourceFiles="$(TargetDir)$(AssemblyName).pdb" DestinationFolder="$(PluginsFolder)\Askar0-$(Description)" />
+    <Copy SourceFiles="$(TargetDir)$(AssemblyName).xml" DestinationFolder="$(PluginsFolder)\Askar0-$(Description)" />
+    <Copy SourceFiles="$(TargetDir)$(AssemblyName).dll" DestinationFolder="e:\Plugins\Askar0-$(Description)" />
+    <Copy SourceFiles="$(TargetDir)$(AssemblyName).pdb" DestinationFolder="e:\Plugins\Askar0-$(Description)" />
+    <Copy SourceFiles="$(TargetDir)$(AssemblyName).xml" DestinationFolder="e:\Plugins\Askar0-$(Description)" />
+
+    <ZipDirectory
+            SourceDirectory="e:\Plugins\Askar0-$(Description)"
+            DestinationFile="e:\Zipfiles\Askar0-$(Description).zip"
+            Overwrite="true" />
+  </Target>
+
+</Project>
