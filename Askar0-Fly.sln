@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Solution Items\solution_private.targets = Solution Items\solution_private.targets
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Askar0_CreativeModeToggle", "Askar0_Gauges\Askar0_CreativeModeToggle.csproj", "{4C0D7644-CA6D-480E-940C-EEFC3DA2B128}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Askar0_CreativeModeToggle", "Askar0_CreativeModeToggle\Askar0_CreativeModeToggle.csproj", "{4C0D7644-CA6D-480E-940C-EEFC3DA2B128}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Askar0_RunningSpeed", "Askar0_RunningSpeed\Askar0_RunningSpeed.csproj", "{5D55E757-009E-41D2-BCF0-9E68AA6B5C0E}"
 EndProject

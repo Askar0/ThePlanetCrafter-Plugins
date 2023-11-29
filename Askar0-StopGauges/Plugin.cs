@@ -56,7 +56,7 @@ namespace Askar0_StopGauges
                 bool isAppAFK;
                 if (flag)
                 {
-                    isAppAFK = flag;
+                    isAppAFK = flag; // flag
                     // Todo: Code StopGauges whilst window has focus
                     // logger.LogInfo("Toggle AFK Mode: " + isAppAFK);
                 }

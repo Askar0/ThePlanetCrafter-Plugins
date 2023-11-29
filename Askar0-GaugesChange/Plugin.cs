@@ -35,7 +35,7 @@ namespace Askar0_GaugesChange
         /// 
         /// </summary>
         public static ConfigEntry<string> custModifier;
-        static bool dLog;
+        static bool dLog = true;
         //static PlayerGaugesHandler playerGaugesHandler;
 
 
@@ -64,7 +64,6 @@ namespace Askar0_GaugesChange
         {
             if (isEnabled.Value)
             {
-                dLog = true;
                 float modValue = 0f;
                 modValue = GetModifierValue(custModifier.Value);
                 // playerGaugesHandler = Managers.GetManager<PlayersManager>()?.GetActivePlayerController()?.GetPlayerGaugesHandler();

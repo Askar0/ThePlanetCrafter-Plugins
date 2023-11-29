@@ -52,7 +52,7 @@ namespace Askar0_RunningSpeed
         {
             if (isEnabled.Value)
             {
-                Managers.GetManager<PlayerMovable>().SetMoveSpeed(isRunningSpeed.Value);
+                Managers.GetManager<PlayerMovable>().SetMoveSpeed(isRunningSpeed.Value); // ?
             }
         }
     }
