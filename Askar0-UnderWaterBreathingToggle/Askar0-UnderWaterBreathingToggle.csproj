@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>Askar0_CreativeModeToggle</AssemblyName>
-    <Description>(Cheat) Toggle Creative Mode</Description>
-    <Version>1.0.0.3</Version>
+    <AssemblyName>Askar0_UnderWaterBreathingToggle</AssemblyName>
+    <Description>(Cheat) Under Water Breathing Toggle </Description>
+    <Version>1.0.0.1</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <LangVersion>latest</LangVersion>
@@ -20,13 +20,18 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  
+
   <ItemGroup>
     <Reference Include="UnityEngine-InputSystem">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>$(GameManaged)\Unity.InputSystem.dll</HintPath>
       <Private>False</Private>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="BepInEx.Analyzers" Version="1.0.8" />
+    <PackageReference Update="BepInEx.Core" Version="5.4.21" />
   </ItemGroup>
 
   <Target Name="CopyDLLs" AfterTargets="Build">
@@ -37,10 +42,7 @@
     <Copy SourceFiles="$(TargetDir)$(AssemblyName).pdb" DestinationFolder="e:\Plugins\Askar0-$(Description)" />
     <Copy SourceFiles="$(TargetDir)$(AssemblyName).xml" DestinationFolder="e:\Plugins\Askar0-$(Description)" />
 
-    <ZipDirectory
-            SourceDirectory="e:\Plugins\Askar0-$(Description)"
-            DestinationFile="e:\Zipfiles\Askar0-$(Description).zip"
-            Overwrite="true" />
+    <ZipDirectory SourceDirectory="e:\Plugins\Askar0-$(Description)" DestinationFile="e:\Zipfiles\Askar0-$(Description).zip" Overwrite="true" />
   </Target>
 
 </Project>
